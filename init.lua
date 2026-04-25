@@ -105,9 +105,8 @@ local function show_proposal_details(player_name, proposal_index)
         comments_str = comments_str .. minetest.formspec_escape(commenter .. ":") .. "\n" .. minetest.formspec_escape(comment) .. "\n\n"
     end
     comments_str = comments_str:gsub("\n\n$", "")
-
     -- Comments textarea
-    formspec = formspec .. "textarea[0.5,6.5;11,3;comments;;" .. comments_str .. "]"
+    formspec = formspec .. "textarea[0.5,6.5;11,3;;;" .. comments_str .. "]"
 
     -- Edit and Delete buttons for the player's own comment
     if has_commented then
